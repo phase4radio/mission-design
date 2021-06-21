@@ -13,9 +13,6 @@ _Check out our [issues](https://github.com/phase4radio/mission-design/issues) an
 
 We have a collection of analysis:
 
-[__Link Budget__](https://github.com/phase4radio/mission-design/tree/main/analysis/link-budget) 
-With DVB-S2(X) link budgets for LEO, GEO, Lunar and Mars orbits.
-
 [__Power__](https://github.com/phase4radio/mission-design/tree/main/analysis/power) 
 Power generation, usage and budgeting over orbital periods.
 
@@ -24,6 +21,9 @@ Propulsion for insertion into target orbit and station-keeping.
 
 [__Radiation__](https://github.com/phase4radio/mission-design/tree/main/analysis/propulsion)
 Propulsion for insertion into target orbit and station-keeping.
+
+[__Link Budget__](https://github.com/phase4radio/mission-design/tree/main/analysis/link-budget/link-budget-tool) 
+With DVB-S2(X) link budgets for LEO, GEO, Lunar and Mars orbits.
 
 ### Want to Know More?
 

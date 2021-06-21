@@ -7,7 +7,7 @@ To gain a first impression of the expected radiation experienced by the satellit
 The expected TID is shown below for differing aluminium shielding thicknesses with the separate radiation sources shown as well as the total expected dosage.
  
 
-![Exposure vs Shielding](tid/outputs/battery_capacity_5years_120whr_40W.png)
+![Exposure vs Shielding](tid/outputs/tid_vs_shielding_5years_geo.png)
 
 
 With no shielding the dosage is very high - greater than 10 Mrad - which is beyod COTS component capabilities.  However it can be seen that after 3.5 mm of shielding the expected dosage is reduced to 10 krad which is certainly possible for some COTS components.

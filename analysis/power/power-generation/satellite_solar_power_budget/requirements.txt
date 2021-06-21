@@ -1,0 +1,4 @@
+sgp4
+matplotlib
+PyKDL
+numpy

@@ -1,0 +1,126 @@
+###########################################################################
+#
+# Definition of a highly capable ground station 
+#   ie. repurposed 25m readiotelecope
+#
+###########################################################################
+
+
+# Define the nominal performance
+nominal :
+    rx :
+        antenna :
+            gain                : 3          # dB
+            #aperture            : 7.0         # m^2
+            #aperture_efficiency : 0.65
+            polarization        : 'RHCP'
+            pattern             : 
+            noise_temp          : 150        # K (https://www.researchgate.net/figure/Antenna-noise-temperature-as-a-function-of-Zenith-angle-and-Frequency_fig5_308332418)
+            tracking            : True
+            pointing_loss       : 0.5          # dB
+        cable :
+            gain                : -0.25      # dB
+            noise_figure        : 0.25       # dB
+        lna :
+            gain                : 30         # dB
+            noise_figure        : 1.0        # dB
+        filter :
+            gain                : -3.5       # dB
+            noise_figure        : 3.5        # dB
+        demodulator :
+            gain                : 0          # dB
+            noise_figure        : 10         # dB
+        
+    tx :
+        antenna :
+            #gain                : 3          # dB
+            aperture            : 0.0001     # m^2
+            aperture_efficiency : 0.6
+            polarization        : 'RHCP'
+            pattern             : 
+            tracking            : True
+            pointing_loss       : 0          # dB
+        pa :
+            power               : 2          # dBW
+
+
+# Define the statistical disctributions for Monte-Carlo analysis
+statistical :
+    rx :
+        antenna :
+            #gain :
+            #  - 'Gaussian'
+            #   - 0
+            aperture :
+                - 'Gaussian'
+                - 0
+            aperture_efficiency :
+                - 'Gaussian'
+                - 0
+            polarization :
+                - 'NotValid'
+            pattern :
+                - 'Gaussian'
+                - 0
+            noise_temp :
+                - 'Gaussian'
+                - 0
+            tracking :
+                - 'NotValid'
+            pointing_loss :
+                - 'Gaussian'
+                - 0
+        cable :
+            gain :
+                - 'Gaussian'
+                - 0
+            noise_figure :
+                - 'Gaussian'
+                - 0
+        lna :
+            gain :
+                - 'Gaussian'
+                - 0
+            noise_figure :
+                - 'Gaussian'
+                - 0
+        filter :
+            gain :
+                - 'Gaussian'
+                - 0
+            noise_figure :
+                - 'Gaussian'
+                - 0
+        demodulator :
+            gain :
+                - 'Gaussian'
+                - 0
+            noise_figure :
+                - 'Gaussian'
+                - 0
+        
+    tx :
+        antenna :
+            #gain :
+            #    - 'Gaussian'
+            #    - 0
+            aperture :
+                - 'Gaussian'
+                - 0
+            aperture_efficiency :
+                - 'Gaussian'
+                - 0
+            polarization :
+                - 'NotValid'
+            pattern :
+                - 'Gaussian'
+                - 0
+            tracking :
+                - 'NotValid'
+            pointing_loss :
+                - 'Gaussian'
+                - 0
+        pa :
+            power :
+                - 'Gaussian'
+                - 0

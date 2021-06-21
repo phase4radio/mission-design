@@ -1,0 +1,88 @@
+
+satellite :
+    rx :
+        antenna :
+            gain                : 3          # dB
+            polarization        : 'RHCP'
+            pattern             : !include 3dB_pattern.yaml
+            noise_temp          : 1000       # K
+            tracking            : False
+        cable :
+            gain                : -0.75      # dB
+            noise_figure        : 0.75       # dB
+        lna :
+            gain                : 35         # dB
+            noise_figure        : 2.75       # dB
+        filter :
+            gain                : -3.5       # dB
+            noise_figure        : 3.5        # dB
+        demodulator :
+            gain                : 0          # dB
+            noise_figure        : 15         # dB
+        receiver :
+            implementation_loss : 2          # dB
+    tx :
+        antenna :
+            gain                : 3          # dB
+            polarization        : 'RHCP'
+            pattern             : !include 3dB_pattern.yaml
+            tracking            : False
+        pa :
+            power               : 1.5        # dBW
+            
+            
+ground_station :
+    rx :
+        antenna :
+            polarization        : 'RHCP'
+            pattern             : !include 48dB_pattern.yaml
+            noise_temp          : 300        # K
+            tracking            : True
+        cable :
+            gain                : -0.75      # dB
+            noise_figure        : 0.75       # dB
+        lna :
+            gain                : 35         # dB
+            noise_figure        : 2.75       # dB
+        filter :
+            gain                : -3.5       # dB
+            noise_figure        : 3.5        # dB
+        demodulator :
+            gain                : 0          # dB
+            noise_figure        : 15         # dB
+        
+    tx :
+        antenna :
+            gain                : 25        # dB
+            polarization        : 'RHCP'
+            tracking            : True
+        pa :
+            power               : 23        # dBW
+            
+downlink_channel :
+    name                        : 'X-Band'
+    bitrate                     : 1e6       # Hz
+    allocation                  : 500e4     # Hz
+    center_freq                 : 8200      # Hz
+    atmospheric_loss            : 1         # dB
+    ionospheric_loss            : 1         # dB
+    rain_loss                   : 2         # dB
+    multipath_fading            : 0         # dB
+    polarization_mismatch_loss  : 3         # dB
+    
+uplink_channel :
+    name                        : 'C-Band'
+    bitrate                     : 500e3     # Hz
+    allocation                  : 5e6       # Hz
+    center_freq                 : 2022.5    # Hz
+    atmospheric_loss            : 0.5       # dB
+    ionospheric_loss            : 0.5       # dB
+    rain_loss                   : 1         # dB
+    multipath_fading            : 0         # dB
+    polarization_mismatch_loss  : 3         # dB
+        
+
+geometry :
+    apoapsis_altitude           : 550       # km
+    periapsis_altitude          : 500       # km
+    min_elevation               : 20        # degrees

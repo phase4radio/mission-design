@@ -1,0 +1,128 @@
+###########################################################################
+#
+# Definition of Phase4 satellite DMT transponder in Lunar configuration
+#
+###########################################################################
+
+
+# Define the nominal performance
+nominal :
+    rx :
+        antenna :
+            aperture            : 0.00126    # m^2
+            aperture_efficiency : 0.65
+            polarization        : 'linear'
+            pattern             : 
+            noise_temp          : 1000       # K
+            tracking            : False
+            pointing_loss       : 0          # dB
+        cable :
+            gain                : -0.75      # dB
+            noise_figure        : 0.75       # dB
+        lna :
+            gain                : 35         # dB
+            noise_figure        : 2.75       # dB
+        filter :
+            gain                : -3.5       # dB
+            noise_figure        : 3.5        # dB
+        demodulator :
+            gain                : 0          # dB
+            noise_figure        : 15         # dB
+        receiver :
+            implementation_loss : 2          # dB
+    tx :
+        antenna :
+            #gain                : 3          # dB
+            aperture            : 0.00126     # m^2
+            aperture_efficiency : 0.65
+            polarization        : 'linear'
+            pattern             : 
+            tracking            : False
+            pointing_loss       : 0          # dB
+        pa :
+            power               : 20         # dBW
+
+
+# Define the statistical disctributions for Monte-Carlo analysis
+statistical :
+    rx :
+        antenna :
+            #gain :
+            #   - 'Gaussian'
+            #   - 0
+            aperture :
+                - 'Gaussian'
+                - 0                
+            aperture_efficiency :
+                - 'Gaussian'
+                - 0
+            polarization :
+                - 'NotValid'
+            pattern :
+                - 'Gaussian'
+                - 0
+            noise_temp :
+                - 'Gaussian'
+                - 0
+            tracking :
+                - 'NotValid'
+            pointing_loss :
+                - 'Gaussian'
+                - 0            
+        cable :
+            gain :
+                - 'Gaussian'
+                - 0
+            noise_figure :
+                - 'Gaussian'
+                - 0
+        lna :
+            gain :
+                - 'Gaussian'
+                - 0
+            noise_figure :
+                - 'Gaussian'
+                - 0
+        filter :
+            gain :
+                - 'Gaussian'
+                - 0
+            noise_figure :
+                - 'Gaussian'
+                - 0
+        demodulator :
+            gain :
+                - 'Gaussian'
+                - 0
+            noise_figure :
+                - 'Gaussian'
+                - 0
+        receiver :
+            implementation_loss :
+                - 'Gaussian'
+                - 0
+    tx :
+        antenna :
+            #gain :
+            #   - 'Gaussian'
+            #   - 0
+            aperture :
+                - 'Gaussian'
+                - 0.0001
+            aperture_efficiency :
+                - 'Gaussian'
+                - 0.01
+            polarization :
+                - 'NotValid'
+            pattern :
+                - 'Gaussian'
+                - 0
+            tracking :
+                - 'NotValid'
+            pointing_loss :
+                - 'Gaussian'
+                - 0
+        pa :
+            power :
+                - 'Gaussian'
+                - 0.2

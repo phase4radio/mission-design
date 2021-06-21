@@ -1,0 +1,97 @@
+###########################################################################
+#
+# Definition of a GEO orbit channel 
+#
+###########################################################################
+
+
+# Define the nominal performance
+nominal:
+
+    downlink :
+        name                        : 'X-Band'
+        bitrate                     : 0.8e6     # Hz
+        allocation                  : 2e6       # Hz
+        center_freq                 : 10475     # MHz
+        atmospheric_loss            : 'ITU'     # use the ITU model to calculate the loss
+        ionospheric_loss            : 0.5       # dB
+        rain_loss                   : 'ITU'     # use the ITU model to calculate the loss
+        multipath_fading            : 0.0       # dB
+        polarization_mismatch_loss  : 0.0       # dB
+    
+    uplink :
+        name                        : 'C-Band'
+        bitrate                     : 25e3      # Hz
+        allocation                  : 5e6       # Hz
+        center_freq                 : 5840      # MHz
+        atmospheric_loss            : 0.5       # dB
+        ionospheric_loss            : 0.5       # dB
+        rain_loss                   : 1         # dB
+        multipath_fading            : 0         # dB
+        polarization_mismatch_loss  : 0         # dB
+        
+
+    geometry :
+        altitude                    : 35786     # km
+        elevation                   : 30         # degrees
+
+
+# Define the statistical disctributions for Monte-Carlo analysis
+statistical :
+
+    downlink:
+        name                        :
+            - 'NotValid'
+        bitrate                     :
+            - 'Fixed'
+        allocation                  :
+            - 'Fixed'
+        center_freq                 :
+            - 'Fixed'    
+        atmospheric_loss            :
+            - 'ITU'
+            - [41.39, -71.05]       # latitude. longtitude
+        ionospheric_loss            :
+            - 'Gaussian'
+            - 0
+        rain_loss                   :
+            - 'ITU'
+            - [41.39, -71.05]       # latitude. longtitude
+        multipath_fading            :
+            - 'Gaussian'
+            - 0
+        polarization_mismatch_loss  :
+            - 'Gaussian'
+            - 0
+    
+    uplink :
+        name                        :
+            - 'NotValid'
+        bitrate                     :
+            - 'Fixed'
+        allocation                  :
+            - 'Fixed'
+        center_freq                 :
+            - 'Fixed'
+        atmospheric_loss            :
+            - 'Gaussian'
+            - 0
+        ionospheric_loss            :
+            - 'Gaussian'
+            - 0
+        rain_loss                   :
+            - 'Gaussian'
+            - 0
+        multipath_fading            :
+            - 'Gaussian'
+            - 0
+        polarization_mismatch_loss  :
+            - 'Gaussian'
+            - 0
+
+    geometry :
+        altitude                    :
+            - 'Fixed'
+        elevation                   :
+            - 'Uniform'
+            - [5, 89.9]             # minimum, maximum

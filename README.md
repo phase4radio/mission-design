@@ -19,7 +19,7 @@ Power generation, usage and budgeting over orbital periods.
 [__Propulsion__](https://github.com/phase4radio/mission-design/tree/main/analysis/propulsion)
 Propulsion for insertion into target orbit and station-keeping.
 
-[__Radiation__](https://github.com/phase4radio/mission-design/tree/main/analysis/propulsion)
+[__Radiation__](https://github.com/phase4radio/mission-design/tree/main/analysis/radiation)
 Propulsion for insertion into target orbit and station-keeping.
 
 [__Link Budget__](https://github.com/phase4radio/mission-design/tree/main/analysis/link-budget/link-budget-tool) 
